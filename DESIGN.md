@@ -1,8 +1,14 @@
-# Trip Atlas — Design Direction
+# Trip Atlas — design
 
-Trip Atlas is a route-planning desk built as a printed railway/field itinerary.
-It uses warm paper, Georgia display type, blue route ink, coral annotations,
-and a day rail that behaves like a timetable rather than a card grid.
+Since 2026-11-19 the desk uses the shared **Reader shell** (`app/reader-shell.css`,
+`components/reader-shell.tsx`, rules in `READER.md`): Geist via next/font (with the shell's Thai
+fallback stack), the `--rs-*` light and dark tokens, one top bar and a footer back to bookchaowalit.com.
 
-The route index, selected route sheet, budget, and next-stop action are the
-product surface. Data is deliberately synthetic and labeled in the UI.
+- Home: a short page head, a count line, then one row per route (nights and budget, the stops in order,
+  code and mood tags) — the routes show in the first screen on phones.
+- Route page (`/routes/[id]`): back link, tags, nights / budget / stops in the meta line, every day of the
+  route as an ordered list, then previous/next route. All days show at once, so there is no selected-tab
+  state to announce and no "Mark next stop" button.
+- Floor: text ≥ 12px, targets ≥ 44px, 4.5:1 text in light and dark, forced colors.
+
+Routes, stops and budgets are illustrative and written in `lib/trip-atlas.ts`; nothing is fetched or booked.
