@@ -2,7 +2,6 @@
 @import "./reader-shell.css";
 
 html, body { margin: 0; background: var(--rs-bg); }
-html { scroll-padding-top: 64px; }
 
 .rs-head + .rs-count { margin-top: 24px; }
 /* Day by day: one stop per line, the day and city in bold. */
